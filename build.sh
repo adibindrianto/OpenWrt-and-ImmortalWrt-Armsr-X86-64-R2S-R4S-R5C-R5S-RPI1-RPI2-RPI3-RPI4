@@ -19,6 +19,7 @@ kmod-nls-utf8 kmod-usb-serial-option kmod-usb-serial-sierrawireless kmod-usb-uhc
 kmod-usb-net-ipheth kmod-usb-net-cdc-mbim usbmuxd libusbmuxd-utils libimobiledevice-utils \
 mbim-utils qmi-utils uqmi umbim modemmanager luci-proto-modemmanager luci-proto-3g luci-proto-ncm \
 luci-proto-ncm usb-modeswitch nano picocom minicom wget \
+ath9k-htc-firmware btrfs-progs hostapd hostapd-utils kmod-ath kmod-ath9k kmod-ath9k-common kmod-ath9k-htc kmod-cfg80211 kmod-crypto-acompress kmod-crypto-crc32c kmod-crypto-hash kmod-fs-btrfs kmod-mac80211 \
 kmod-usb-net-asix kmod-usb-net-asix-ax88179 kmod-usb-net-rtl8150 kmod-usb-net-rtl8152" \
 
 # Files directory for custom configurations or files

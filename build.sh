@@ -40,7 +40,7 @@ PACKAGES="$PACKAGES cgi-io libiwinfo libiwinfo-data libiwinfo-lua liblua libluci
 
 # Default OpenWrt packages
 # Add default packages installed by official OpenWrt
-PACKAGES="$PACKAGES base-files busybox dnsmasq dropbear fstools jshn libblobmsg-json libiwinfo-lua libjson-c liblua libubox-lua libubus-lua logd mtd netifd odhcp6c odhcpd-base procd uci uclient-fetch uhttpd zlib"
+PACKAGES="$PACKAGES base-files busybox dnsmasq dropbear fstools jshn libblobmsg-json libiwinfo-lua libjson-c liblua libubox-lua libubus-lua logd mtd netifd procd uci uclient-fetch uhttpd zlib"
 
 # Define the files directory for custom configurations or files
 FILES="files"

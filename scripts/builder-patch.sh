@@ -15,7 +15,7 @@ sed -i "s/CONFIG_ISO_IMAGES=y/# CONFIG_ISO_IMAGES is not set/" .config
 sed -i "s/CONFIG_VHDX_IMAGES=y/# CONFIG_VHDX_IMAGES is not set/" .config
 
 # Increase rootfs partition size to 500M
-sed -i "s/CONFIG_TARGET_ROOTFS_PARTSIZE=.*/CONFIG_TARGET_ROOTFS_PARTSIZE=102/" .config
+sed -i "s/CONFIG_TARGET_ROOTFS_PARTSIZE=.*/CONFIG_TARGET_ROOTFS_PARTSIZE=1024/" .config
 
 # Change default IP address from 192.168.1.1 to 100.100.100.1
 sed -i "s/192.168.1.1/100.100.100.1/g" package/base-files/files/etc/config/network

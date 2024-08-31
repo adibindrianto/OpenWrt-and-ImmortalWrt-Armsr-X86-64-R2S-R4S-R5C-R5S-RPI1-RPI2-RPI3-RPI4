@@ -4,7 +4,7 @@
 make info
 
 # Set the profile to NanoPi R2S
-PROFILE="nanopi-r2s"
+PROFILE="friendlyarm_nanopi-r2s"
 
 # Initialize package list
 PACKAGES=""

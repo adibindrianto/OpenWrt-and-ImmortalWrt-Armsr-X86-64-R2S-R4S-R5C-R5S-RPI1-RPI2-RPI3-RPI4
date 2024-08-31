@@ -7,7 +7,7 @@ make info
 PROFILE="friendlyarm_nanopi-r2s"
 
 # Define packages
-PACKAGES="dnsmasq dnsmasq-full cgi-io libiwinfo libiwinfo-data libiwinfo-lua liblua \
+PACKAGES="luci-lua-runtime dnsmasq dnsmasq-full cgi-io libiwinfo libiwinfo-data libiwinfo-lua liblua \
 liblucihttp liblucihttp-lua libubus-lua lua luci luci-app-firewall luci-app-opkg \
 luci-base luci-lib-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full \
 luci-mod-network luci-mod-status luci-mod-system luci-proto-ipv6 luci-proto-ppp luci-ssl \
@@ -22,11 +22,11 @@ luci-proto-ncm usb-modeswitch nano picocom minicom wget \
 ath9k-htc-firmware btrfs-progs hostapd hostapd-utils kmod-ath kmod-ath9k kmod-ath9k-common kmod-ath9k-htc kmod-cfg80211 kmod-crypto-acompress kmod-crypto-crc32c kmod-crypto-hash kmod-fs-btrfs kmod-mac80211 \
 kmod-usb-net-asix kmod-usb-net-asix-ax88179 kmod-usb-net-rtl8150 kmod-usb-net-rtl8152 \
 kmod-fs-ext4 kmod-fs-vfat kmod-fs-xfs kmod-fs-btrfs kmod-fs-f2fs kmod-fs-squashfs \
-kmod-fs-ntfs kmod-fs-ntfs3 kmod-usb-storage kmod-usb-storage-extras kmod-nftables \
-kmod-nft-fib kmod-nft-bridge kmod-nft-nat kmod-nft-set kmod-nft-chain kmod-nft-obj kmod-nft-roi \
+kmod-fs-ntfs kmod-fs-ntfs3 kmod-usb-storage kmod-usb-storage-extras \
+kmod-nft-fib kmod-nft-bridge kmod-nft-nat \
 block-mount e2fsprogs fdisk kmod-fs-ext4 kmod-fs-vfat kmod-fs-ntfs kmod-fs-btrfs kmod-fs-xfs \
 kmod-fs-squashfs kmod-fs-f2fs \
-gptfdisk parted"
+parted"
 
 # Files directory for custom configurations or files
 FILES="files"

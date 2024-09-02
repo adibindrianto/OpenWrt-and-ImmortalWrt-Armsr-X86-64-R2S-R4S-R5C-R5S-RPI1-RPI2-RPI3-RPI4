@@ -1,4 +1,4 @@
-name: Generate NanoPi R2S OpenWrt Firmware
+name: Generate NanoPi OpenWrt Firmware
 
 # Controls when the workflow will run
 on:
@@ -48,12 +48,14 @@ jobs:
       - name: Run Patch and DIY Scripts
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64
         run: |
-          bash scripts/builder-patch.sh
+          bash scripts/builder-patch-r2s.sh
+          bash scripts/builder-patch-r4s.sh
 
       - name: Generate Firmware
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64
         run: |
-          bash build.sh
+          bash build-r2s.sh
+          bash build-r4s.sh
 
       - name: Upload VDI Image For Development Purpose
         if: github.ref == 'refs/heads/dev'

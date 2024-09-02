@@ -7,11 +7,11 @@ on:
       release: 
         description: 将编译出的镜像上传到 Release
         required: false
-        default: 'false'
+        default: 'true'
       upload-all:
         description: 将编译出的所有镜像都上传到 Artifacts
         required: false
-        default: 'true'
+        default: 'false'
 
 env:
   DOWNLOAD_BASE: https://downloads.openwrt.org

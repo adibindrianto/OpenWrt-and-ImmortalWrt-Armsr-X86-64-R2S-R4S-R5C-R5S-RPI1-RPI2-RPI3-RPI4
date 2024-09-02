@@ -3,7 +3,7 @@
 # Print OpenWrt build info
 make info
 
-# Set profile for NanoPi R2S
+# Set profile for x86-64
 PROFILE="generic"
 
 # Define packages

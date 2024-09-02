@@ -4,7 +4,7 @@
 make info
 
 # Set profile for NanoPi R2S
-PROFILE="rpi"
+PROFILE="friendlyarm_nanopi-r2s"
 
 # Define packages
 PACKAGES="luci-compat luci-lua-runtime dnsmasq dnsmasq-full cgi-io libiwinfo libiwinfo-data libiwinfo-lua liblua \

@@ -1,4 +1,4 @@
-name: Generate Raspberry Pi OpenWrt Firmware
+name: Generate Raspberry Pi 4 OpenWrt Firmware
 
 # Controls when the workflow will run
 on:

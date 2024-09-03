@@ -1,4 +1,4 @@
-name: Generate Amlogic OpenWrt Firmware
+name: Generate Armsr OpenWrt Firmware
 
 # Controls when the workflow will run
 on:
@@ -48,12 +48,12 @@ jobs:
       - name: Run Patch and DIY Scripts
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armsr-armv8.Linux-x86_64
         run: |
-          bash scripts/builder-patch-amlogic.sh
+          bash scripts/builder-patch-armsr.sh
 
       - name: Generate Firmware
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armsr-armv8.Linux-x86_64
         run: |
-          bash build-amlogic.sh
+          bash build-armsr.sh
 
       - name: Upload VDI Image For Development Purpose
         if: github.ref == 'refs/heads/dev'

@@ -1,4 +1,4 @@
-name: Generate Nano Pi R2S OpenWrt Firmware
+name: Generate Nano Pi R4S OpenWrt Firmware
 
 # Controls when the workflow will run
 on:

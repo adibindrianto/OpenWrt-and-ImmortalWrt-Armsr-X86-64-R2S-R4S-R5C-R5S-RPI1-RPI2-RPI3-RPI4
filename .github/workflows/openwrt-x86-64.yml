@@ -1,4 +1,4 @@
-name: Generate x86-64 OpenWrt Firmware
+name: x86-64 OpenWrt Firmware
 
 # Controls when the workflow will run
 on:

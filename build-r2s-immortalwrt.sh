@@ -23,7 +23,7 @@ kmod-usb-net-asix kmod-usb-net-asix-ax88179 kmod-usb-net-rtl8150 kmod-usb-net-rt
 kmod-fs-ext4 kmod-fs-vfat kmod-fs-xfs kmod-fs-btrfs kmod-fs-f2fs kmod-fs-squashfs \
 kmod-fs-ntfs kmod-fs-ntfs3 kmod-usb-storage kmod-usb-storage-extras \
 kmod-nft-fib kmod-nft-bridge kmod-nft-nat \
-blockd block-mount e2fsprogs fdisk parted blkid kmod-fs-cifs kmod-fs-exfat ntfs-3g-utils gdisk tune2fs resize2fs losetup cfdisk f2fs-tools kmod-usb-storage-uas kmod-usb-ledtrig-usbport"
+blockd block-mount e2fsprogs fdisk parted blkid kmod-fs-cifs kmod-fs-exfat gdisk tune2fs resize2fs losetup cfdisk f2fs-tools kmod-usb-storage-uas kmod-usb-ledtrig-usbport"
 
 # Files directory for custom configurations or files
 FILES="files"

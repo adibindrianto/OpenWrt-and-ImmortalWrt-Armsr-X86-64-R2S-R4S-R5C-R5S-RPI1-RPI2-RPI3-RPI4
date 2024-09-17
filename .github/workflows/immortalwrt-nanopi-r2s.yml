@@ -48,12 +48,12 @@ jobs:
       - name: Run Patch and DIY Scripts
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64
         run: |
-          bash scripts/builder-patch-r2s.sh
+          bash scripts/builder-patch-r2s-immortalwrt.sh
 
       - name: Generate Firmware
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64
         run: |
-          bash build-r2s.sh
+          bash build-r2s-immortalwrt.sh
 
       - name: Upload VDI Image For Development Purpose
         if: github.ref == 'refs/heads/dev'

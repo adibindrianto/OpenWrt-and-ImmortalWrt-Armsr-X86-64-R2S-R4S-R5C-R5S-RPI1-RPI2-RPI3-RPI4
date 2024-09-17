@@ -1,4 +1,4 @@
-name: Generate Armsr OpenWrt Firmware
+name: Armsr OpenWrt Firmware
 
 # Controls when the workflow will run
 on:

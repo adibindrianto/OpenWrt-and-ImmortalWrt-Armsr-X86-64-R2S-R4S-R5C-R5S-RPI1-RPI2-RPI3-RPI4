@@ -1,4 +1,4 @@
-name: x86-64 OpenWrt Firmware
+name: x86-64 ImmortalWrt Firmware
 
 # Controls when the workflow will run
 on:

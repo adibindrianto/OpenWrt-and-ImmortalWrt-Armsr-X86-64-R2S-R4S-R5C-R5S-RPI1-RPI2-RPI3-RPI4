@@ -19,7 +19,7 @@ kmod-nls-utf8 kmod-usb-serial-option kmod-usb-serial-sierrawireless kmod-usb-uhc
 kmod-usb-net-ipheth kmod-usb-net-cdc-mbim usbmuxd libusbmuxd-utils libimobiledevice-utils \
 usb-modeswitch nano picocom minicom wget \
 ath9k-htc-firmware btrfs-progs hostapd hostapd-utils kmod-ath kmod-ath9k kmod-ath9k-common kmod-ath9k-htc kmod-cfg80211 kmod-crypto-acompress kmod-crypto-crc32c kmod-crypto-hash kmod-fs-btrfs kmod-mac80211 \
-kmod-usb-net-asix kmod-usb-net-asix-ax88179 kmod-usb-net-rtl8150 kmod-usb-net-rtl8152 \
+kmod-usb-net-asix kmod-usb-net-asix-ax88179 kmod-usb-net-rtl8150 \
 kmod-fs-ext4 kmod-fs-vfat kmod-fs-xfs kmod-fs-btrfs kmod-fs-f2fs kmod-fs-squashfs \
 kmod-fs-ntfs kmod-fs-ntfs3 kmod-usb-storage kmod-usb-storage-extras \
 kmod-nft-fib kmod-nft-bridge kmod-nft-nat \

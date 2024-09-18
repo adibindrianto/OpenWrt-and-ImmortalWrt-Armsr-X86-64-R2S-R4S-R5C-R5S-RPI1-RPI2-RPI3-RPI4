@@ -3,7 +3,7 @@
 # Print OpenWrt build info
 make info
 
-# Set profile for x86-64
+# Set profile for Armsr
 PROFILE="generic"
 
 # Define packages

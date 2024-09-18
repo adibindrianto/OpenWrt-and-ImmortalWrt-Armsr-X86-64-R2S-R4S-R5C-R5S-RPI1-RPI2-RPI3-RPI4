@@ -1,4 +1,4 @@
-name: Raspberry Pi 2 OpenWrt Firmware
+name: Raspberry Pi 2 ImmortalWrt Firmware
 
 # Controls when the workflow will run
 on:

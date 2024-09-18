@@ -53,7 +53,7 @@ jobs:
       - name: Generate Firmware
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-bcm27xx-bcm2710.Linux-x86_64
         run: |
-          bash /package-immortalwrt/build-rpi3.sh
+          bash package-immortalwrt/build-rpi3.sh
 
       - name: Upload VDI Image For Development Purpose
         if: github.ref == 'refs/heads/dev'

@@ -48,25 +48,25 @@ jobs:
       - name: Run Patch and DIY Scripts
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64
         run: |
-          bash scripts/builder-patch-r2s.sh
+          bash scripts/builder-patch-r5c.sh
 
       - name: Generate Firmware
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64
         run: |
-          bash package-immortalwrt/build-r2s.sh
+          bash package-immortalwrt/build-r5c.sh
 
       - name: Upload VDI Image For Development Purpose
         if: github.ref == 'refs/heads/dev'
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ env.VENDOR }}-${{ env.VERSION }}-nanopi-r2s-vdi-image-${{ env.DATETIME }}
+          name: ${{ env.VENDOR }}-${{ env.VERSION }}-nanopi-r5c-vdi-image-${{ env.DATETIME }}
           path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64/bin/targets/rockchip/armv8/*.vdi
 
       - name: Upload All Firmware to Artifacts
         if: github.event.inputs.upload-all == 'true'
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ env.VENDOR }}-${{ env.VERSION }}-nanopi-r2s-images-${{ env.DATETIME }}
+          name: ${{ env.VENDOR }}-${{ env.VERSION }}-nanopi-r5c-images-${{ env.DATETIME }}
           path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64/bin/targets/rockchip/armv8/*
 
       - name: Upload Firmware to Release

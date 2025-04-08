@@ -48,12 +48,12 @@ jobs:
       - name: Run Patch and DIY Scripts
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64
         run: |
-          bash scripts/builder-patch-r4s.sh
+          bash scripts/builder-patch-r5c.sh
 
       - name: Generate Firmware
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64
         run: |
-          bash package-openwrt/build-r4s.sh
+          bash package-openwrt/build-r5c.sh
 
       - name: Upload VDI Image For Development Purpose
         if: github.ref == 'refs/heads/dev'

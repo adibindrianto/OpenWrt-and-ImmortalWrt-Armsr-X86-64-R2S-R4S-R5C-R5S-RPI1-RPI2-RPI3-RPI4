@@ -3,7 +3,7 @@
 # Print OpenWrt build info
 make info
 
-# Set profile for NanoPi R5S
+# Set profile for NanoPi R5C
 PROFILE="friendlyarm_nanopi-r5c"
 
 # Define packages

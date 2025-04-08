@@ -1,0 +1,81 @@
+name: Nano Pi R5S ImmortalWrt Firmware
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+    inputs:
+      release: 
+        description: 将编译出的镜像上传到 Release
+        required: false
+        default: 'true'
+      upload-all:
+        description: 将编译出的所有镜像都上传到 Artifacts
+        required: false
+        default: 'false'
+
+env:
+  DOWNLOAD_BASE: https://downloads.immortalwrt.org
+  VENDOR: immortalwrt
+  VERSION: 24.10.0
+
+jobs:
+  Generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Initialization Environment
+        run: |
+          sudo apt-get -qq update
+          sudo apt-get -qq install build-essential libncurses5-dev libncursesw5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip qemu-utils mkisofs
+
+      - name: Setup Environment Variables
+        run: |
+          echo "DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
+          echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with: 
+          path: origin
+
+      - name: Download Image Builder
+        run: |
+          wget $DOWNLOAD_BASE/releases/$VERSION/targets/rockchip/armv8/$VENDOR-imagebuilder-$VERSION-rockchip-armv8.Linux-x86_64.tar.zst
+          tar -xvf $VENDOR-imagebuilder-$VERSION-rockchip-armv8.Linux-x86_64.tar.zst
+          rm -rf $VENDOR-imagebuilder-$VERSION-rockchip-armv8.Linux-x86_64.tar.zst
+          cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-rockchip-armv8.Linux-x86_64/
+    
+      - name: Run Patch and DIY Scripts
+        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64
+        run: |
+          bash scripts/builder-patch-r5s.sh
+
+      - name: Generate Firmware
+        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64
+        run: |
+          bash package-immortalwrt/build-r5s.sh
+
+      - name: Upload VDI Image For Development Purpose
+        if: github.ref == 'refs/heads/dev'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.VENDOR }}-${{ env.VERSION }}-nanopi-r5s-vdi-image-${{ env.DATETIME }}
+          path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64/bin/targets/rockchip/armv8/*.vdi
+
+      - name: Upload All Firmware to Artifacts
+        if: github.event.inputs.upload-all == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.VENDOR }}-${{ env.VERSION }}-nanopi-r5s-images-${{ env.DATETIME }}
+          path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64/bin/targets/rockchip/armv8/*
+
+      - name: Upload Firmware to Release
+        if: github.event.inputs.release == 'true'
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file_glob: true
+          file: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64/bin/targets/rockchip/armv8/*
+          asset_name: ${{ github.event.repository.name }}-${{ github.sha }}
+          tag: release-${{ env.DATE }}
+          overwrite: true

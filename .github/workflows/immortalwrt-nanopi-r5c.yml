@@ -34,7 +34,7 @@ jobs:
           echo "DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.3
         with: 
           path: origin
 

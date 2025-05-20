@@ -16,7 +16,7 @@ on:
 env:
   DOWNLOAD_BASE: https://downloads.openwrt.org
   VENDOR: openwrt
-  VERSION: 24.10.0
+  VERSION: 19.07.10
 
 jobs:
   Generate:

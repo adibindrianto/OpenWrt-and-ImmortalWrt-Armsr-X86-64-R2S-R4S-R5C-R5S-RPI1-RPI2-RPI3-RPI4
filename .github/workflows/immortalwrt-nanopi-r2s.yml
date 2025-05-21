@@ -16,7 +16,7 @@ on:
 env:
   DOWNLOAD_BASE: https://downloads.immortalwrt.org
   VENDOR: immortalwrt
-  VERSION: 24.10.0
+  VERSION: 21.02.7
 
 jobs:
   Generate:

@@ -16,7 +16,7 @@ on:
 env:
   DOWNLOAD_BASE: https://downloads.immortalwrt.org
   VENDOR: immortalwrt
-  VERSION: 23.05.4
+  VERSION: 24.10.0
 jobs:
   Generate:
     runs-on: ubuntu-latest
@@ -56,14 +56,14 @@ jobs:
 
       - name: Upload VDI Image For Development Purpose
         if: github.ref == 'refs/heads/dev'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.VENDOR }}-${{ env.VERSION }}-rpi4-vdi-image-${{ env.DATETIME }}
           path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-bcm27xx-bcm2711.Linux-x86_64/bin/targets/bcm27xx/bcm2711/*.vdi
 
       - name: Upload All Firmware to Artifacts
         if: github.event.inputs.upload-all == 'true'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.VENDOR }}-${{ env.VERSION }}-rpi4-images-${{ env.DATETIME }}
           path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-bcm27xx-bcm2711.Linux-x86_64/bin/targets/bcm27xx/bcm2711/*
